@@ -11,7 +11,7 @@ class LocationChoice extends React.Component {
     // stopping the form from submitting
     e.preventDefault();
     // retriving text from that input
-    const locationName = this.myInput.value;
+    const locationName = this.myInput.current.value;
      //changing the page to menu
     this.props.history.push(`/location/${locationName}`);
   }

@@ -403,7 +403,7 @@
   .order-title {
     text-align: center;
   }
-  .fish-edit {
+  .poke-edit {
     margin-bottom: 20px;
     border: 2px solid #000;
     overflow: hidden;
@@ -411,9 +411,9 @@
     display: flex;
     flex-wrap: wrap;
   }
-  .fish-edit input,
-  .fish-edit textarea,
-  .fish-edit select {
+  .poke-edit input,
+  .poke-edit textarea,
+  .poke-edit select {
     width: 33.33%;
     padding: 10px;
     line-height: 1;
@@ -427,19 +427,19 @@
     border-radius: 0;
     background: #fff;
   }
-  .fish-edit input:focus,
-  .fish-edit textarea:focus,
-  .fish-edit select:focus {
+  .poke-edit input:focus,
+  .poke-edit textarea:focus,
+  .poke-edit select:focus {
     outline: 0;
     background: #fef2de;
   }
-  .fish-edit textarea {
+  .poke-edit textarea {
     width: 100%;
   }
-  .fish-edit input:last-of-type {
+  .poke-edit input:last-of-type {
     width: 100%;
   }
-  .fish-edit button {
+  .poke-edit button {
     width: 100%;
     border: 0;
   }
