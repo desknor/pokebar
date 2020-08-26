@@ -6,7 +6,10 @@ class CheckOut extends React.Component {
     return (
 			<div className="checkout">
         <h2>Check Out</h2>
-          <AddPokeForm addPoke={this.props.addPoke}/>
+          <AddPokeForm addPoke={this.props.addPoke} />
+          <button onClick={this.props.loadSamplePokes}>
+            Load Sample Pokes
+          </button>
 			</div>
     )
   }

@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Order from './components/Order';
 import CheckOut from './components/CheckOut';
+import samplePokes from './sample-pokes';
 
 class App extends React.Component {
   state = {
@@ -14,6 +15,11 @@ class App extends React.Component {
      pokes[`poke${Date.now()}`] = poke
      this.setState({pokes});
    };
+
+   loadSamplePokes = () => {
+     this.setState({ pokes: samplePokes});
+   }
+
   render() {
     return (
       <div className="poke-bar">
@@ -21,7 +27,7 @@ class App extends React.Component {
           <Header tagline="310 Wall Street"/>
         </div>
         <Order />
-        <CheckOut addPoke={this.addPoke} />
+        <CheckOut addPoke={this.addPoke} loadSamplePokes={this.loadSamplePokes}/>
       </div>
     )
   }
