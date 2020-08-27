@@ -19,6 +19,15 @@ class App extends React.Component {
 
    loadSamplePokes = () => {
      this.setState({ pokes: samplePokes});
+   };
+
+   addToOrder = key => {
+     //copying of state state
+     const order = { ...this.state.order };
+     // add to the order or update number in order
+     order[key] = order[key] + 1 || 1;
+     // calling setState to update state object
+     this.setState({ order });
    }
 
    //Poke.js componenet in UL
@@ -30,7 +39,12 @@ class App extends React.Component {
           <Header tagline="310 Wall Street" />
           <ul className="pokes">
            {Object.keys(this.state.pokes).map(key => ( 
-             <Poke key={key} details={this.state.pokes[key]} />
+             <Poke 
+              key={key}
+              index={key}
+              details={this.state.pokes[key]} 
+              addToOrder={this.addToOrder}
+              />
             ))}
           </ul>
         </div>
