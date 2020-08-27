@@ -218,11 +218,11 @@
     background: #d4d4d4;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'MaunaLoa', sans-serif;
+    font-family: 'mahalo', sans-serif;
     font-size: 2rem;
   }
   h1 {
-    font-family: 'MaunaLoa', sans-serif;
+    font-family: 'mahalo', sans-serif;
     text-align: center;
     font-weight: normal;
     margin: 0;
@@ -233,7 +233,7 @@
   h5,
   h6 {
     font-weight: normal;
-    font-family: 'MaunaLoa', sans-serif;
+    font-family: 'mahalo', sans-serif;
   }
   h2 {
     text-align: center;
@@ -451,7 +451,7 @@
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
   }
-  .menu-fish {
+  .menu-poke {
     border-bottom: 2px solid #000;
     border-top: 1px solid #000;
     padding-bottom: 2rem;
@@ -460,11 +460,11 @@
     clear: both;
     overflow: hidden;
   }
-  .menu-fish p {
+  .menu-poke p {
     margin: 0;
     font-size: 1.8rem;
   }
-  .menu-fish .fish-name {
+  .menu-poke .fish-name {
     margin: 0;
     display: -webkit-box;
     display: flex;
@@ -473,12 +473,12 @@
     -webkit-box-align: center;
             align-items: center;
   }
-  .menu-fish .price {
+  .menu-poke .price {
     font-size: 1.4rem;
     -webkit-box-pack: end;
             justify-content: flex-end;
   }
-  .menu-fish img {
+  .menu-poke img {
     float: left;
     width: 150px;
     margin-right: 1rem;
@@ -490,7 +490,7 @@
     border: 1px solid #000;
     font-weight: 600;
     font-size: 1.5rem;
-    font-family: 'MaunaLoa';
+    font-family: 'mahalo';
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     position: relative;

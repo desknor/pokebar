@@ -38,6 +38,6 @@
 }
 
 @font-face {
-  font-family: 'MaunaLoa';
-  src: local('MaunaLoa'), url(./fonts/MaunaLoa.ttf) format('truetype');
+  font-family: 'mahalo';
+  src: local('mahalo'), url(./fonts/mahalo.ttf) format('truetype');
 }
