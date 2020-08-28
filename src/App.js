@@ -48,7 +48,7 @@ class App extends React.Component {
             ))}
           </ul>
         </div>
-        <Order />
+        <Order pokes={this.state.pokes} order={this.state.order} />
         <CheckOut addPoke={this.addPoke} loadSamplePokes={this.loadSamplePokes}/>
       </div>
     )
