@@ -443,7 +443,7 @@
     width: 100%;
     border: 0;
   }
-  .list-of-fish {
+  .list-of-poke {
     border-top: 2px solid #000;
     border-bottom: 1px solid #000;
     padding-top: 5px;
@@ -464,7 +464,7 @@
     margin: 0;
     font-size: 1.8rem;
   }
-  .menu-poke .fish-name {
+  .menu-poke .poke-name {
     margin: 0;
     display: -webkit-box;
     display: flex;

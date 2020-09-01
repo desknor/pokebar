@@ -5,7 +5,10 @@ class Order extends React.Component {
   renderOrder = (key) => {
     const poke = this.props.pokes[key];
     const count = this.props.order[key];
-    const isAvailable = poke.status === 'available';
+    const isAvailable = poke && poke.status === 'available';
+    //Ensure the poke is loaded before continuing 
+    if (!poke) return null;
+
     if (!isAvailable) {
       return <li key={key}>
         Sorry {poke ? poke.name : 'poke'} No longer available

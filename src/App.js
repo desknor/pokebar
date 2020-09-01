@@ -2,20 +2,54 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Order from './components/Order';
-import CheckOut from './components/CheckOut';
+import Inventory from './components/Inventory';
 import samplePokes from './sample-pokes';
 import Poke from './components/Poke';
+import base from './base';
 
 class App extends React.Component {
   state = {
     pokes: {},
     order: {},
   };
+
+  componentDidMount() {
+    const { params } = this.props.match
+    const localStorageRef = localStorage.getItem(`params.locationId`);
+    if (localStorageRef) {
+      this.setState({ order: JSON.parse(localStorageRef) });
+    }
+    this.ref = base.syncState(`${params.locationId}/pokes`, {
+      context: this,
+      state: 'pokes',
+    });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem(
+      this.props.match.params.locationId, 
+      JSON.stringify(this.state.order)
+    );
+  }
+
+  componenetWillUnmount() {
+    base.removeBinding(this.ref);
+  }
+
    addPoke = poke => {
      const pokes = { ...this.state.pokes };
      pokes[`poke${Date.now()}`] = poke
      this.setState({pokes});
    };
+
+   updatePoke = (key, updatedPoke) => {
+     // takes copy of current state
+     const pokes = { ... this.state.pokes };
+     // update the state
+     pokes[key] = updatedPoke;
+     // set that to state
+     this.setState({ pokes });
+   }
 
    loadSamplePokes = () => {
      this.setState({ pokes: samplePokes});
@@ -49,7 +83,12 @@ class App extends React.Component {
           </ul>
         </div>
         <Order pokes={this.state.pokes} order={this.state.order} />
-        <CheckOut addPoke={this.addPoke} loadSamplePokes={this.loadSamplePokes}/>
+        <Inventory 
+          addPoke={this.addPoke} 
+          updatePoke={this.updatePoke}
+          loadSamplePokes={this.loadSamplePokes}
+          pokes={this.state.pokes}
+        />
       </div>
     )
   }
